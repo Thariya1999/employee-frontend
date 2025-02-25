@@ -40,7 +40,7 @@ const Login = () => {
       className="flex flex-col items-center h-screen justify-center bg-gradient-to-b from-teal-600 from-50% to-gray-100 to-50% space-y-6">
       <h2 className="font-pacific text-3xl text-white">Employee Management System</h2>
       <div className="border shadow p-6 w-80 bg-white">
-        <h2 className="text-2xl font-bold mb-4">Log</h2>
+        <h2 className="text-2xl font-bold mb-4">Login</h2>
         {error && <p className="text-red-500">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

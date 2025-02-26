@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-
+import API_BASE_URL from '../../../config'
 
 const Detail = () => {
     const { id } = useParams();
@@ -11,7 +11,7 @@ const Detail = () => {
     useEffect(() => {
         const fetchLeave = async () => {
             try {
-                const response = await axios.get(`https://employee-api-blue.vercel.app/api/leave/detail/${id}`, {
+                const response = await axios.get(`${API_BASE_URL}/api/leave/detail/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     },
@@ -30,7 +30,7 @@ const Detail = () => {
 
     const changeStatus = async (id, status) => {
         try {
-            const response = await axios.put(`https://employee-api-blue.vercel.app/api/leave/${id}`, {status}, {
+            const response = await axios.put(`${API_BASE_URL}/api/leave/${id}`, {status}, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 },
@@ -54,7 +54,7 @@ const Detail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <img
-                            src={`https://employee-api-blue.vercel.app/${leave.employeeId.userId.profileImage}`}
+                            src={`${API_BASE_URL}/${leave.employeeId.userId.profileImage}`}
                             className="rounded-full border w-72" />
                     </div>
                     <div>

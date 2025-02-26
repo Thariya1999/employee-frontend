@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from '../../../config';
 
 const Add = () => {
     const {user} = useAuth()
@@ -19,7 +20,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://employee-api-blue.vercel.app/api/leave/add", {
+            const response = await axios.post(`${API_BASE_URL}/api/leave/add`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 },

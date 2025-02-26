@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../../../config';
 
 const AddDepartment = () => {
     const [department, setDepartment] = useState({
@@ -15,7 +16,7 @@ const AddDepartment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post('https://employee-api-blue.vercel.app/api/department/add', department, {
+            const response = await axios.post(`${API_BASE_URL}/api/department/add`, department, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

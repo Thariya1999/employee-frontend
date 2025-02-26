@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { fetchDepartments, getEmployees } from '../../utils/EmployeeHelper'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
+import API_BASE_URL from '../../../config'
 
 const Add = () => {
     const [salary, setSalary] = useState({
@@ -37,7 +38,7 @@ const Add = () => {
         e.preventDefault()
 
         try {
-            const response = await axios.post(`https://employee-api-blue.vercel.app/api/salary/add`, salary, {
+            const response = await axios.post(`${API_BASE_URL}/api/salary/add`, salary, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

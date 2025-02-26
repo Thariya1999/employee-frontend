@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useAuth } from '../../context/authContext'
+import API_BASE_URL from '../../../config'
 
 const List = () => {
 
@@ -12,7 +13,7 @@ const List = () => {
 
     const fetchLeaves = async () => {
         try {
-            const response = await axios.get(`https://employee-api-blue.vercel.app/api/leave/${id}/${user.role}`, {
+            const response = await axios.get(`${API_BASE_URL}/api/leave/${id}/${user.role}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },

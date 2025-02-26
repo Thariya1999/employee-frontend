@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import API_BASE_URL from '../../config'
 
 const UserContext = createContext()
 
@@ -12,7 +13,7 @@ const AuthContext = ({ children }) => {
             try {
                 const token = localStorage.getItem('token')
                 if (token) {
-                    const response = await axios.get("https://employee-api-blue.vercel.app/api/auth/verify", {//http://13.61.148.160:3000/
+                    const response = await axios.get(`${API_BASE_URL}/api/auth/verify`, {//http://13.61.148.160:3000/
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },

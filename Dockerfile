@@ -12,7 +12,8 @@ RUN npm install
 
 COPY . .
 
-ENV API_BASE_URL=http://your-api-url.com
+ARG API_BASE_URL
+ENV REACT_APP_API_BASE_URL=$API_BASE_URL
 
 EXPOSE 5173
 # port eka expose karanawa

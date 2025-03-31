@@ -220,7 +220,7 @@ const Add = () => {
                             Role
                         </label>
                         <select
-                            name="password"
+                            name="role"
                             onChange={handleChange}
                             className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                             required

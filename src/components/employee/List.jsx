@@ -27,7 +27,7 @@ const List = () => {
                             sno: sno++,
                             dep_name: emp.department.dep_name,
                             name: emp.userId.name,
-                            dob: new Date(emp.dob).toLocaleDateString(),
+                            dob: emp.dob ? new Date(emp.dob).toLocaleDateString('en-GB') : 'N/A',
                             profileImage: (<img width={40} className='rounded-full' src={`${API_BASE_URL}/${emp.userId.profileImage}`} />),
                             action: (<EmployeeButtons Id={emp._id} />),
                         }

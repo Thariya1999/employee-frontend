@@ -20,7 +20,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/leave/add`, {
+            const response = await axios.post(`${API_BASE_URL}/api/leave/add`, leave, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 },
@@ -50,7 +50,7 @@ const Add = () => {
                             className='mt-1 p-2 block w-full border border-gray-300 rounded-md'
                             required
                         >
-                            <option value="">Select Department</option>
+                            <option value="">Select Leave</option>
                             <option value="Sick Leave">Sick Leave</option>
                             <option value="Casual Leave">Casual Leave</option>
                             <option value="Annual Leave">Annual Leave</option>
@@ -102,7 +102,7 @@ const Add = () => {
                 <button
                     type='submit'
                     className='w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded'>
-                    Add Salary
+                    Add Leave
                 </button>
             </form>
         </div>

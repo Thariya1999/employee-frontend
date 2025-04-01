@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component';
-import { columns } from '../../utils/LeaveHelper';
+import { columns, LeaveButtons } from '../../utils/LeaveHelper';
 import axios from 'axios';
 import API_BASE_URL from '../../../config';
 

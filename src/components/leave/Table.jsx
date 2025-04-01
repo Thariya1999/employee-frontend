@@ -10,7 +10,7 @@ const Table = () => {
 
     const fetchLeaves = async () => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/api/leave`, {
+            const response = await axios.get(`${API_BASE_URL}/api/leaves`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

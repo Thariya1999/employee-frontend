@@ -63,7 +63,7 @@ const Login = () => {
             <a href="#" className="text-teal-600">Forgot password?</a>
           </div>
           <div className="mb-4">
-            <button type="submit" className="w-full bg-teal-600 text-white py-2">Log</button></div>
+            <button type="submit" className="w-full bg-teal-600 text-white py-2">Log In</button></div>
         </form>
       </div>
     </div>
